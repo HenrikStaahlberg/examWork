@@ -1,0 +1,8 @@
+<div>
+  <iman-multiple-choice-question
+    *ngFor="let question of questions"
+    [question]="question"
+    (select)="test($event)"
+    >
+  </iman-multiple-choice-question>
+</div>

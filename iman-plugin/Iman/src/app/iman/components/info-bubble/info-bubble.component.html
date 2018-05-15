@@ -1,0 +1,28 @@
+<div (window:resize)="resizeEvent($event)" class="iman-component">
+    <mat-card 
+        *ngIf="description !== ''"
+        class="description"
+        id="info-bubble-description"
+        [style.left]="setPositionInfo(positionType.LEFT)"
+        [style.top]="setPositionInfo(positionType.TOP)"
+        [style.right]="setPositionInfo(positionType.RIGHT)"
+        [style.transform]="translate()"
+        [style.width]="setPositionInfo(positionType.WIDTH)"
+        [style.z-index]="zIndex"
+        >
+    <p class="description-content mat-body-1">
+        <markdown [data]="description">
+        </markdown>
+    </p>
+    <iman-questions-container>
+    </iman-questions-container>
+    <div class="actions" >
+        <button mat-raised-button 
+            class="actionButton iman-button"
+            *ngFor="let button of buttons"
+            (click)="buttonClick.emit(button)">
+            {{button.label}}
+        </button>
+    </div>
+</mat-card>
+</div>

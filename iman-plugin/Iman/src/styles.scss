@@ -1,0 +1,23 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+@import '~@angular/material/theming';
+
+@include mat-core();
+
+@import './app/iman/theme/iman-theme.scss';
+
+@import './app/iman/components/info-bubble/info-bubble.component.scss-theme.scss';
+@import './app/iman/components/highlight/highlight.component.scss-theme.scss';
+
+@mixin iman-components-theme($theme) {
+    @include iman-info-bubble-theme($theme);
+    @include iman-highlight-theme($theme);
+}
+
+@include angular-material-theme($iman-theme);
+
+.iman-theme {
+    @include angular-material-theme($iman-theme);
+    @include iman-components-theme($iman-theme);
+}

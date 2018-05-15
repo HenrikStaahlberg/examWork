@@ -1,0 +1,11 @@
+Magic happens on port \\.\pipe\fc98f66d-e815-4238-89cd-732d26b3d3a4
+OPTIONS /usability-data 204 0 - 7.622 ms
+POST /usability-data 204 - - 1721.353 ms
+OPTIONS /usability-data 204 0 - 0.324 ms
+POST /usability-data 204 - - 14.781 ms
+OPTIONS /usability-data 204 0 - 0.261 ms
+POST /usability-data 204 - - 6.579 ms
+OPTIONS /usability-data 204 0 - 0.138 ms
+POST /usability-data 204 - - 5.075 ms
+OPTIONS /usability-data 204 0 - 0.137 ms
+POST /usability-data 204 - - 5.818 ms

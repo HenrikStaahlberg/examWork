@@ -1,0 +1,18 @@
+<div>
+  <p class="mat-body-1 test">
+    <markdown [data]="question.question">
+    </markdown>
+  </p>
+  <mat-radio-group 
+    class="allOptions"
+    [(ngModel)]="answer">
+    <div *ngFor="let option of question.options">
+      {{option}}
+      <mat-radio-button
+        class="oneOption iman-button" 
+        [value]="option"
+        (click)="select.emit({answer: option, question: question})">
+    </mat-radio-button>
+    </div>
+  </mat-radio-group>
+</div>

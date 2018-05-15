@@ -1,0 +1,17 @@
+.highlight {
+    position: absolute;
+    pointer-events: none;
+
+    border-style: solid;
+    border-width: 3px;
+
+    z-index: 10000;
+}
+
+.overlay {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+
+    box-shadow: 0 0 0 99999px rgba(80, 80, 80, 0.4);
+}

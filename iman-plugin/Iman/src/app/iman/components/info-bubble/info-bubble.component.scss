@@ -1,0 +1,22 @@
+
+.description {
+    position:absolute;
+
+    display: flex;
+
+    flex-flow: column nowrap;
+    justify-content: space-between;
+
+    z-index: 10000;
+}
+
+.actions {
+    align-content: center;
+    width:100%;
+
+    align-self: center;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+    margin-top: 10px;
+}

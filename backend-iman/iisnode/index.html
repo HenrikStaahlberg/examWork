@@ -1,0 +1,87 @@
+<html>
+<head>
+    <title>iisnode logs</title>
+    <style type="text/css">
+        body
+        {
+            font-family: "Trebuchet MS" , Arial, Helvetica, sans-serif;
+        }
+        table
+        {
+            border-collapse: collapse;
+        }
+        td, th
+        {
+            border: 1px solid lightgray;
+            padding: 3px 7px 2px 7px;
+        }
+        th
+        {
+            text-align: left;
+            padding-top: 5px;
+            padding-bottom: 4px;
+            background-color: Gray;
+            color: #ffffff;
+        }
+        td.stderr
+        {
+            color: Red;
+        }
+    </style>
+</head>
+<body>
+    <table id="logFilesTable">
+        <tr>
+            <th>
+                Computer name
+            </th>
+            <th>
+                PID
+            </th>
+            <th>
+                Type
+            </th>
+            <th>
+                Created
+            </th>
+            <th>
+                Link
+            </th>
+        </tr>
+    </table>
+    <p id="lastUpdated"></p>
+    <script type="text/javascript">
+
+        // this is replaced with actual data at runtime by code in interceptor.js
+        var logFiles = [{"file":"ImanTest-1012-stderr-1525283094807.txt","computername":"ImanTest","pid":1012,"type":"stderr","created":1525283094807},{"file":"ImanTest-1012-stdout-1525283094792.txt","computername":"ImanTest","pid":1012,"type":"stdout","created":1525283094792},{"file":"ImanTest-10300-stdout-1525011047636.txt","computername":"ImanTest","pid":10300,"type":"stdout","created":1525011047636},{"file":"ImanTest-10460-stdout-1525088499534.txt","computername":"ImanTest","pid":10460,"type":"stdout","created":1525088499534},{"file":"ImanTest-10660-stdout-1525020295252.txt","computername":"ImanTest","pid":10660,"type":"stdout","created":1525020295252},{"file":"ImanTest-11240-stdout-1525227458596.txt","computername":"ImanTest","pid":11240,"type":"stdout","created":1525227458596},{"file":"ImanTest-2192-stderr-1525285683946.txt","computername":"ImanTest","pid":2192,"type":"stderr","created":1525285683946},{"file":"ImanTest-2192-stdout-1525285683934.txt","computername":"ImanTest","pid":2192,"type":"stdout","created":1525285683934},{"file":"ImanTest-2880-stdout-1525115332188.txt","computername":"ImanTest","pid":2880,"type":"stdout","created":1525115332188},{"file":"ImanTest-4328-stdout-1525214044405.txt","computername":"ImanTest","pid":4328,"type":"stdout","created":1525214044405},{"file":"ImanTest-4420-stdout-1525014726109.txt","computername":"ImanTest","pid":4420,"type":"stdout","created":1525014726109},{"file":"ImanTest-6028-stdout-1525128235678.txt","computername":"ImanTest","pid":6028,"type":"stdout","created":1525128235678},{"file":"ImanTest-6232-stdout-1525023199660.txt","computername":"ImanTest","pid":6232,"type":"stdout","created":1525023199660},{"file":"ImanTest-6404-stdout-1525335017051.txt","computername":"ImanTest","pid":6404,"type":"stdout","created":1525335017051},{"file":"ImanTest-6624-stdout-1525039614167.txt","computername":"ImanTest","pid":6624,"type":"stdout","created":1525039614167},{"file":"ImanTest-7304-stdout-1525110718931.txt","computername":"ImanTest","pid":7304,"type":"stdout","created":1525110718931},{"file":"ImanTest-7820-stdout-1525208702210.txt","computername":"ImanTest","pid":7820,"type":"stdout","created":1525208702210},{"file":"ImanTest-7884-stdout-1525112667410.txt","computername":"ImanTest","pid":7884,"type":"stdout","created":1525112667410},{"file":"ImanTest-8064-stdout-1525027480552.txt","computername":"ImanTest","pid":8064,"type":"stdout","created":1525027480552},{"file":"ImanTest-8120-stdout-1525028861696.txt","computername":"ImanTest","pid":8120,"type":"stdout","created":1525028861696},{"file":"ImanTest-9812-stdout-1525097361863.txt","computername":"ImanTest","pid":9812,"type":"stdout","created":1525097361863}];
+        var lastUpdated = 1525335019242;
+        var date = new Date();
+
+        date.setTime(lastUpdated);
+        document.getElementById('lastUpdated').innerHTML = 'Index was last updated ' + date;
+
+        logFiles.sort(function (a, b) {
+            return b.created - a.created;
+        });
+
+        var logFilesTable = document.getElementById("logFilesTable");
+        for (var i = 0; i < logFiles.length; i++) {
+            var logFile = logFiles[i];
+            date.setTime(logFile.created);
+            var row = logFilesTable.insertRow(-1);
+            var computerNameCell = row.insertCell(0);
+            var pidCell = row.insertCell(1);
+            var typeCell = row.insertCell(2);
+            var dateCell = row.insertCell(3);
+            var logCell = row.insertCell(4);
+            computerNameCell.innerHTML = logFile.computername;
+            pidCell.innerHTML = logFile.pid.toString();
+            typeCell.innerHTML = logFile.type;
+            typeCell.setAttribute('class', logFile.type);
+            dateCell.innerHTML = date.toString();
+            logCell.innerHTML = '<a href="' + logFile.file + '">log</a>';
+        };
+
+    </script>
+</body>
+</html>

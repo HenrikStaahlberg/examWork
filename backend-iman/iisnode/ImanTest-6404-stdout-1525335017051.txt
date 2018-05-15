@@ -1,0 +1,4 @@
+Magic happens on port \\.\pipe\e642c318-9184-46ea-a355-88d54d18b999
+GET /usability-data 200 167015 - 1378.154 ms
+GET /manuals 200 21353 - 49.582 ms
+GET /manuals 200 21353 - 46.309 ms

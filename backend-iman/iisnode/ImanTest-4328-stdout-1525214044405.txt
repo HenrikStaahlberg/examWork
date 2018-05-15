@@ -1,0 +1,23 @@
+Magic happens on port \\.\pipe\dd76816e-4d11-4a5a-b43a-6a687030424f
+OPTIONS /usability-data 204 0 - 7.516 ms
+POST /usability-data 204 - - 1751.383 ms
+OPTIONS /usability-data 204 0 - 0.324 ms
+POST /usability-data 204 - - 13.770 ms
+OPTIONS /usability-data 204 0 - 0.270 ms
+POST /usability-data 204 - - 5.713 ms
+OPTIONS /usability-data 204 0 - 0.137 ms
+POST /usability-data 204 - - 5.033 ms
+OPTIONS /usability-data 204 0 - 0.134 ms
+POST /usability-data 204 - - 5.252 ms
+OPTIONS /usability-data 204 0 - 0.136 ms
+POST /usability-data 204 - - 5.889 ms
+OPTIONS /usability-data 204 0 - 0.148 ms
+POST /usability-data 204 - - 5.292 ms
+OPTIONS /usability-data 204 0 - 0.135 ms
+POST /usability-data 204 - - 4.883 ms
+OPTIONS /usability-data 204 0 - 0.146 ms
+POST /usability-data 204 - - 5.219 ms
+OPTIONS /usability-data 204 0 - 0.140 ms
+POST /usability-data 204 - - 5.739 ms
+OPTIONS /usability-data 204 0 - 0.143 ms
+POST /usability-data 204 - - 4.934 ms

@@ -1,0 +1,122 @@
+{
+  "type": "array",
+  "items": {
+    "title": "Manual",
+    "description:": "A manual for Iman",
+    "type": "object",
+    "properties": {
+      "id": {
+        "description": "Unique identifier of the manual",
+        "type": "integer"
+      },
+      "title": {
+        "description": "Name of the manual",
+        "type": "string"
+      },
+      "currentStep": {
+        "description": "Used by Iman to denote the step the user is on in manual",
+        "type": "integer"
+      },
+      "steps": {
+        "description": "An array of the steps in the manual",
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "integer"
+            },
+            "description": {
+              "type": "string"
+            },
+            "faultMessage": {
+              "type": "string"
+            },
+            "elementId": {
+              "type": "string"
+            },
+            "canClickElement" : {
+              "type": "boolean"
+            },
+            "buttons": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "label": {
+                    "type": "string"
+                  },
+                  "action": {
+                    "type": "string",
+                    "enum": ["CONTINUE", "SKIPTO", "ANSWER_QUESTION"]
+                  },
+                  "actionValue": {
+                    "type": "integer"
+                  }
+                },
+                "required": ["label", "action", "actionValue"]
+              }
+            },
+            "url": {
+              "type": "string"
+            },
+            "canMoveForward": {
+              "type": "boolean"
+            },
+            "canMoveBackward": {
+              "type": "boolean"
+            },
+            "questions": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "question": {
+                    "type": "string"
+                  },
+                  "options": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "selectedOption": {
+                    "type": "string"
+                  }
+                },
+                "required": ["question", "options", "selectedOption"]
+              }
+            },
+            "acceptableALinks": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "overlayElements": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "elementId": {
+                    "type": "string"
+                  },
+                  "defaultZ": {
+                    "type": "number"
+                  }
+                }
+              }
+            }
+          },
+          "required": ["id", "description", "faultMessage", "elementId", "canClickElement","buttons", "url", "canMoveForward", "canMoveBackward", "questions", "acceptableALinks", "overlayElements"]
+        }
+      }
+    },
+    "required": [
+      "id",
+      "title",
+      "currentStep",
+      "steps"
+    ]
+  }
+}

@@ -1,0 +1,3 @@
+Magic happens on port \\.\pipe\5ba4107b-8601-4255-b3c2-904fd56437f7
+OPTIONS /usability-data 204 0 - 7.517 ms
+POST /usability-data 204 - - 1735.135 ms

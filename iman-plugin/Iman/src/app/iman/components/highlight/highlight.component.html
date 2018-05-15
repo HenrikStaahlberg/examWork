@@ -1,0 +1,15 @@
+<div 
+class="highlight"
+[style.left]="setPositionHighlight('LEFT')"
+[style.top]="setPositionHighlight('TOP')"
+[style.width]="setPositionHighlight('WIDTH')"
+[style.height]="setPositionHighlight('HEIGHT')"
+*ngIf="element"
+[class.mat-elevation-z5]="isActive"
+[style.z-index]="zIndex"
+>  
+    <div class="overlay"
+        [style.z-index]="zIndex - 1"
+        *ngIf="index === 0"> 
+    </div>
+</div>

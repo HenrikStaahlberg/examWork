@@ -1,0 +1,11 @@
+.allOptions {
+    display: flex;
+
+    flex-flow: row nowrap;
+    justify-content: space-between;
+}
+
+.oneOption {
+    align-self: center;
+    padding-left: 5px;
+}

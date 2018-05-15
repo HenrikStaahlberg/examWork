@@ -1,0 +1,9 @@
+$iman-theme-primary: mat-palette($mat-indigo);
+$iman-theme-accent: mat-palette($mat-amber, 50, 50, 600);
+$iman-theme-warn: mat-palette($mat-red);
+
+$iman-theme: mat-light-theme(
+    $iman-theme-primary,
+    $iman-theme-accent,
+    $iman-theme-warn
+);

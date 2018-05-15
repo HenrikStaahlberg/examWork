@@ -1,0 +1,60 @@
+<mat-toolbar 
+*ngIf="currentManual" 
+class="nav-toolbar iman-component" 
+color="primary" 
+id="iman-nav-bar">
+  <button 
+    mat-icon-button 
+      class="toolbar-close-button iman-component"
+      (click)="close.emit()">
+      <mat-icon>close</mat-icon>
+  </button>
+  <div class="center-actions">
+    <button 
+      mat-icon-button 
+      class="iman-component"
+      (click)="stepBackward.emit()"
+      *ngIf="canStepBackward; else insteadOfChevronLeft">
+      <mat-icon>chevron_left</mat-icon>
+    </button>
+    <ng-template
+      #insteadOfChevronLeft>
+      <div
+       class="instead-of-chevron">
+      </div>
+    </ng-template>
+    <iman-out-of class="out-of"
+      [max]="currentManual.steps.length"
+      [current]="(currentManual.currentStep+1)">
+    </iman-out-of>
+    <button 
+    mat-icon-button 
+    class="iman-component"
+    (click)="stepForward.emit()"
+    *ngIf="canStepForward; else insteadOfChevronRight">
+    <mat-icon>chevron_right</mat-icon>
+    </button>
+    <ng-template
+      #insteadOfChevronRight>
+      <div
+       class="instead-of-chevron">
+      </div>
+    </ng-template>
+  </div>
+  <button mat-button
+    class="iman-component"
+    [matMenuTriggerFor]="menu">
+    {{currentManual.title}}
+  </button>
+  <mat-menu 
+    #menu="matMenu"
+    color="primary">
+    <button 
+      color="primary"
+      mat-menu-item
+      class="iman-component"
+      *ngFor="let manual of manuals"
+      (click)="moveTo(manual)">{{manual.title}}
+    </button>
+  </mat-menu>
+</mat-toolbar>

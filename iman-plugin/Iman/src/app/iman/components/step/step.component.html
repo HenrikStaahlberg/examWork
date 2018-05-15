@@ -1,0 +1,28 @@
+<div *ngIf='manual$ | async'>
+  <iman-highlight
+    *ngFor="let element of allElements; let i=index"
+    [element]="element"
+    [zIndex]="imanElementsZindex"
+    [index]="i"
+    >
+  </iman-highlight>
+  <iman-info-bubble 
+    [element]="element"
+    [allElements]="allElements"
+    [description]="currentStep.description"
+    [buttons]="currentStep.buttons"
+    [zIndex]="imanElementsZindex"
+    [position]="currentStep.infoPosition"
+    [fixedWidth]="currentStep.width"
+    (buttonClick)="clickBubbleButton($event)"
+    (stepCompleted)="stepCompleted($event)">
+  </iman-info-bubble>
+  <iman-nav 
+    [currentManual]="manual$ | async"
+    [manuals]="manuals$ | async"
+    (stepForward)="step(1)"
+    (stepBackward)="step(-1)"
+    (moveToManual)="moveToManual($event)"
+    (close)="closeIman($event)">
+  </iman-nav>
+<div>
